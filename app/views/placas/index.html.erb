@@ -1,0 +1,27 @@
+<h1>Listing placas</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Numero</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @placas.each do |placa| %>
+      <tr>
+        <td><%= placa.numero %></td>
+        <td><%= link_to 'Show', placa %></td>
+        <td><%= link_to 'Edit', edit_placa_path(placa) %></td>
+        <td><%= link_to 'Destroy', placa, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Placa', new_placa_path %>
