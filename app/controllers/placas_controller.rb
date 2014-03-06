@@ -10,6 +10,7 @@ class PlacasController < ApplicationController
   # GET /placas/1
   # GET /placas/1.json
   def show
+    @comentarios = @placa.comentarios
   end
 
   # GET /placas/new

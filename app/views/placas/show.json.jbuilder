@@ -1,1 +1,1 @@
-json.extract! @placa, :id, :numero, :created_at, :updated_at
+json.extract! @placa, :id, :numero, :comentarios, :created_at, :updated_at

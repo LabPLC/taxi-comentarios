@@ -5,5 +5,12 @@
   <%= @placa.numero %>
 </p>
 
+<% if @placa.comentarios.any? %>
+  <h3> Comentarios </h3>
+  <ol class="comentarios">
+    <%= render @comentarios %>
+  </ol>
+<% end %>
+
 <%= link_to 'Edit', edit_placa_path(@placa) %> |
 <%= link_to 'Back', placas_path %>

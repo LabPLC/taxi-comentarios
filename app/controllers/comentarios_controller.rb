@@ -1,5 +1,6 @@
 class ComentariosController < ApplicationController
   before_action :set_comentario, only: [:show, :edit, :update, :destroy]
+  protect_from_forgery with: :null_session, :if => Proc.new { |c| c.request.format == 'application/json' }
 
   # GET /comentarios
   # GET /comentarios.json
@@ -24,7 +25,13 @@ class ComentariosController < ApplicationController
   # POST /comentarios
   # POST /comentarios.json
   def create
-    @comentario = Comentario.new(comentario_params)
+    placa = nil
+    if placa = Placa.find_by(numero: params[:comentario][:placa] )
+    else
+      placa = Placa.create(numero: params[:comentario][:placa])
+    end
+    puts placa
+    @comentario = placa.comentarios.build(comentario_params)
 
     respond_to do |format|
       if @comentario.save
@@ -69,6 +76,6 @@ class ComentariosController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def comentario_params
-      params.require(:comentario).permit(:placa, :coment, :usuario)
+      params.require(:comentario).permit(:coment, :usuario)
     end
 end
