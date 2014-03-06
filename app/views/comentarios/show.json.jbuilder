@@ -1,1 +1,1 @@
-json.extract! @comentario, :placa, :coment, :usuario, :created_at, :updated_at
+json.extract! @comentario, :placa, :coment, :usuario, :buen_comentario, :created_at, :updated_at

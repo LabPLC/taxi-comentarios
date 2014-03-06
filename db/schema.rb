@@ -11,17 +11,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140306165043) do
+ActiveRecord::Schema.define(version: 20140306213822) do
 
-  create_table "comentarios", force: true do |t|
-    t.integer  "placa_id"
-    t.text     "coment"
-    t.integer  "usuario"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "comentarios", ["placa_id", "created_at"], name: "index_comentarios_on_placa_id_and_created_at"
+# Could not dump table "comentarios" because of following NoMethodError
+#   undefined method `[]' for nil:NilClass
 
   create_table "placas", force: true do |t|
     t.string   "numero"

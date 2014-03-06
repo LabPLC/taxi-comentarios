@@ -15,5 +15,13 @@
   <%= @comentario.usuario %>
 </p>
 
+<p>
+  <% if @comentario.buen_comentario == 1 %>
+    <strong>Buen Comentario</strong>
+  <% else %>
+    <strong>Mal Comentario</strong>
+  <% end %>
+</p>
+
 <%= link_to 'Edit', edit_comentario_path(@comentario) %> |
 <%= link_to 'Back', comentarios_path %>
