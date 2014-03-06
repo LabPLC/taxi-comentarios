@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  placa: 
+  coment: MyText
+  usuario: 1
+
+two:
+  placa: 
+  coment: MyText
+  usuario: 1

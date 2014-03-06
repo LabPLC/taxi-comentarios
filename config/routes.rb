@@ -1,4 +1,6 @@
 TaxiComentarios::Application.routes.draw do
+  resources :comentarios
+
   resources :placas
 
   # The priority is based upon order of creation: first created -> highest priority.
